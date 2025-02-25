@@ -33,11 +33,12 @@ sleep 1
 yum install -y git
 echo 'dify 0.15.3 安装git完成'
 
+cd /data/yunxinai/dify/0.15.3
 git clone https://gitcode.com/yunxinai/rag-sh.git
 
 echo 'dify 0.15.3 克隆git完成'
 
-sh rag-sh/dify/0.15.3/images.sh
+sh /data/yunxinai/dify/0.15.3/rag-sh/dify/0.15.3/images.sh
 
 echo 'dify 0.15.3 拉取镜像完成'
 
@@ -45,7 +46,9 @@ cd /data/yunxinai/dify/0.15.3
 
 git clone https://gitcode.com/yunxinai/rag-file.git
 
-cd dify/0.15.3/dify
+cd /data/yunxinai/dify/0.15.3/rag-file/dify/0.15.3/dify/docker
+
+cp .env.example .env
 
 docker-compose up -d
 
