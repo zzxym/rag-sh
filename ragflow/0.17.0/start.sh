@@ -46,7 +46,7 @@ cd /data/yunxinai/ragflow/0.17.0
 
 git clone https://gitcode.com/yunxinai/rag-file.git
 
-cd /data/yunxinai/ragflow/0.17.0/rag-file/ragflow/0.17.0/dify/docker
+cd /data/yunxinai/ragflow/0.17.0/rag-file/ragflow/0.17.0/ragflow/docker
 
 docker-compose up -d
 
