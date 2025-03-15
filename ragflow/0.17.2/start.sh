@@ -21,38 +21,38 @@ compose_version=$(docker-compose --version)
 echo "Docker Compose 版本: $compose_version"
 
 
-echo 'ragflow 0.17.0 开始安装'
+echo 'ragflow 0.17.2 开始安装'
 sleep 1
 
-mkdir -p /data/yunxinai/ragflow/0.17.0
-cd /data/yunxinai/ragflow/0.17.0
+mkdir -p /data/yunxinai/ragflow/0.17.2
+cd /data/yunxinai/ragflow/0.17.2
 
-echo 'ragflow 0.17.0 创建目录完成'
+echo 'ragflow 0.17.2 创建目录完成'
 sleep 1
 
 yum install -y git
-echo 'ragflow 0.17.0 安装git完成'
+echo 'ragflow 0.17.2 安装git完成'
 
-cd /data/yunxinai/ragflow/0.17.0
+cd /data/yunxinai/ragflow/0.17.2
 git clone https://gitcode.com/yunxinai/rag-sh.git
 
-echo 'ragflow 0.17.0 克隆git完成'
+echo 'ragflow 0.17.2 克隆git完成'
 
-sh /data/yunxinai/ragflow/0.17.0/rag-sh/ragflow/0.17.0/images.sh
+sh /data/yunxinai/ragflow/0.17.2/rag-sh/ragflow/0.17.2/images.sh
 
-echo 'ragflow 0.17.0 拉取镜像完成'
+echo 'ragflow 0.17.2 拉取镜像完成'
 
-cd /data/yunxinai/ragflow/0.17.0
+cd /data/yunxinai/ragflow/0.17.2
 
-git clone https://gitcode.com/yunxinai/rag-file.git
+git clone https://gitcode.com/yunxinai/ai-code-ragflow
 
-cd /data/yunxinai/ragflow/0.17.0/rag-file/ragflow/0.17.0/ragflow/docker
+cd /data/yunxinai/ragflow/0.17.2/ai-code-ragflow/0.17.2/docker
 
-echo 'ragflow 0.17.0 默认以cpu 启动，如需改为gpu启动，命令改成 docker-compose -f docker-compose-gpu.yml up -d'
+echo 'ragflow 0.17.2 默认以cpu 启动，如需改为gpu启动，命令改成 docker-compose -f docker-compose-gpu.yml up -d'
 
 docker-compose -f docker-compose.yml up -d
 
-echo 'ragflow 0.17.0 安装完成'
+echo 'ragflow 0.17.2 安装完成'
 
 
 
