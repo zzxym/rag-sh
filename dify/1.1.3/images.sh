@@ -20,7 +20,7 @@ docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/di
 docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/redis:6-alpine redis:6-alpine
 docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/postgres:15-alpine postgres:15-alpine
 docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/nginx:latest nginx:latest
-docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/dify_sandbox:0.2.10 langgenius/dify-sandbox:0.2.10
+docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/dify_sandbox:0.2.11 langgenius/dify-sandbox:0.2.11
 docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/ubuntu_squid:latest ubuntu/squid:latest
 docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/semitechnologies_weaviate:1.19.0 semitechnologies/weaviate:1.19.0
 docker tag crpi-33mr80vehc50lqh8.cn-chengdu.personal.cr.aliyuncs.com/yunxinai/dify_plugin-daemon:0.0.6-local langgenius/dify-plugin-daemon:0.0.6-local
