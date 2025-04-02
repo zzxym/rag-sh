@@ -44,7 +44,7 @@ echo 'ragflow 0.17.2 拉取镜像完成'
 
 cd /data/yunxinai/ragflow/0.17.2
 
-git clone https://gitcode.com/yunxinai/ai-code-ragflow
+git clone https://gitcode.com/yunxinai/ai-code-ragflow.git
 
 cd /data/yunxinai/ragflow/0.17.2/ai-code-ragflow/0.17.2/docker
 

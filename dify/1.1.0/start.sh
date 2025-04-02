@@ -44,7 +44,7 @@ echo 'dify 1.1.0 拉取镜像完成'
 
 cd /data/yunxinai/dify/1.1.0
 
-git clone https://gitcode.com/yunxinai/ai-code-dify
+git clone https://gitcode.com/yunxinai/ai-code-dify.git
 
 cd /data/yunxinai/dify/1.1.0/ai-code-dify/1.1.0/docker
 
