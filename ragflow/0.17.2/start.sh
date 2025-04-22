@@ -34,7 +34,7 @@ apt install -y git
 echo 'ragflow 0.17.2 安装git完成'
 
 cd /data/ragflow/0.17.2
-git clone https://gitcode.com/yunxinai/rag-sh.git
+git clone https://github.com/zzxym/rag-sh.git
 
 echo 'ragflow 0.17.2 克隆git完成'
 
