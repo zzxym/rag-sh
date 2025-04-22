@@ -38,22 +38,16 @@ git clone https://gitcode.com/yunxinai/rag-sh.git
 
 echo 'searxng克隆git完成'
 
-sh /data/yunxinai/dify/1.2.0/rag-sh/dify/1.2.0/images.sh
+sh /data/yunxinai/searxng/searxng/images.sh
 
 echo 'searxng 拉取镜像完成'
 
-cd /data/yunxinai/dify/1.2.0
+cd /data/yunxinai/searxng
 
-git clone https://gitcode.com/yunxinai/ai-code-dify.git
+git clone https://gitcode.com/yunxinai/searxng-docker.git
 
-cd /data/yunxinai/dify/1.2.0/ai-code-dify/1.2.0/docker
-
-cp .env.example .env
+cd /data/yunxinai/searxng/searxng-docker
 
 docker-compose up -d
 
-echo 'dify 1.2.0 安装完成'
-
-
-
-
+echo 'searxng 安装完成'
