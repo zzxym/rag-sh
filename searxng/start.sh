@@ -38,7 +38,7 @@ git clone https://gitcode.com/yunxinai/rag-sh.git
 
 echo 'searxng克隆git完成'
 
-sh /data/yunxinai/searxng/searxng/images.sh
+sh /data/yunxinai/searxng/rag-sh/searxng/images.sh
 
 echo 'searxng 拉取镜像完成'
 
