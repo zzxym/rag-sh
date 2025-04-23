@@ -2,18 +2,18 @@
 
 # 检查是否安装了 Docker
 if ! command -v docker &> /dev/null; then
-echo "Docker 未安装，请先安装 Docker。"
-exit 1
+    echo "Docker 未安装，请先安装 Docker。"
+    exit 1
 fi
 
 echo "Docker 已安装。"
 docker_version=$(docker --version)
 echo "Docker 版本: $docker_version"
 
-        # 检查是否安装了 Docker Compose
+# 检查是否安装了 Docker Compose
 if ! command -v docker-compose &> /dev/null; then
-echo "Docker Compose 未安装，请先安装 Docker Compose。"
-exit 1
+    echo "Docker Compose 未安装，请先安装 Docker Compose。"
+    exit 1
 fi
 
 echo "Docker Compose 已安装。"
@@ -48,12 +48,44 @@ git clone https://github.com/zzxym/ai-code-ragflow.git
 
 cd /data/ragflow/0.17.2/ai-code-ragflow/0.17.2/docker
 
-echo 'ragflow 0.17.2 默认以gpu 启动，如需改为cpu启动，命令改成 docker compose -f docker-compose.yml up -d'
+if [ -f /etc/systemd/system/ragflow-0.17.2.service ]; then
+    echo "服务已存在，跳过创建。"
+else
+    echo '正在创建 systemd 服务...'
+        DOCKER_PATH=$(which docker)
+        SERVICE_CONTENT="[Unit]
+Description=Ragflow 0.17.2 Service (GPU)
+After=docker.service
+Requires=docker.service
 
-docker compose -f docker-compose-gpu.yml up -d
+[Service]
+Type=simple
+User=root  
+WorkingDirectory=/data/ragflow/0.17.2/ai-code-ragflow/0.17.2/docker
+ExecStart=$DOCKER_PATH compose -f docker-compose-gpu.yml up -d
+Restart=always
+RestartSec=5
+DelayStart=180  # 延时180 秒
 
-echo 'ragflow 0.17.2 安装完成'
+[Install]
+WantedBy=multi-user.target"
+
+# 写入服务文件
+sudo sh -c "echo '$SERVICE_CONTENT' > /etc/systemd/system/ragflowup.service"
+
+# 重载 systemd 配置
+sudo systemctl daemon-reload
+sudo systemctl enable --now ragflowup.service
+fi
 
 
+# 启用并启动服务（立即生效，且开机自启）
+sudo systemctl start ragflowup.service
+
+echo 'systemd 服务创建并启用完成。'
 
 
+### 原脚本末尾的启动命令（可选：若需要首次执行时立即启动，可保留）###
+# echo 'ragflow 0.17.2 默认以gpu 启动，如需改为cpu启动，命令改成 docker-compose -f docker-compose.yml up -d'
+# docker-compose -f docker-compose-gpu.yml up -d
+# echo 'ragflow 0.17.2 安装完成'
