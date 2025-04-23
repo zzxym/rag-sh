@@ -48,9 +48,9 @@ git clone https://github.com/zzxym/ai-code-ragflow.git
 
 cd /data/ragflow/0.17.2/ai-code-ragflow/0.17.2/docker
 
-echo 'ragflow 0.17.2 默认以gpu 启动，如需改为cpu启动，命令改成 docker-compose -f docker-compose.yml up -d'
+echo 'ragflow 0.17.2 默认以gpu 启动，如需改为cpu启动，命令改成 docker compose -f docker-compose.yml up -d'
 
-docker-compose -f docker-compose-gpu.yml up -d
+docker compose -f docker-compose-gpu.yml up -d
 
 echo 'ragflow 0.17.2 安装完成'
 
