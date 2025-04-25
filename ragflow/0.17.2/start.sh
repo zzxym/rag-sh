@@ -75,7 +75,7 @@ Requires=docker.service
 Type=simple
 User=root  
 WorkingDirectory=/data/ragflow/0.17.2/ai-code-ragflow/0.17.2/docker
-ExecStart=$DOCKER_PATH compose -f docker-compose-gpu.yml up -d
+ExecStart=$DOCKER_PATH compose -f docker-compose.yml up -d
 Restart=always
 RestartSec=5
 DelayStart=180  # 延时180 秒
@@ -99,6 +99,5 @@ echo 'systemd 服务创建并启用完成。'
 
 
 ### 原脚本末尾的启动命令（可选：若需要首次执行时立即启动，可保留）###
-# echo 'ragflow 0.17.2 默认以gpu 启动，如需改为cpu启动，命令改成 docker-compose -f docker-compose.yml up -d'
-# docker-compose -f docker-compose-gpu.yml up -d
+# echo 'ragflow 0.17.2 默认以gpu 启动，如需改为gpu启动，命令改成 docker-compose -f docker-compose-gpu.yml up -d'
 # echo 'ragflow 0.17.2 安装完成'
